@@ -65,6 +65,12 @@ function App() {
       dispatch({ type: 'setUser', username: user.username })
     })
     getMessages(dispatch)
+
+    const subscription = DataStore.observe(Chatty).subscribe(msg => {
+      console.log(msg.model, msg.opType, msg.element);
+      getMessages(dispatch)
+    });
+    return () => subscription.unsubscribe();
   }, [])
 
   return (
