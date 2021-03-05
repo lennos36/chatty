@@ -1,5 +1,5 @@
 projects:
-  chattyapi:
+  pingo:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js

@@ -1,6 +1,6 @@
 {
   "auth": {
-    "amplifydatastore4fb733bf": {
+    "pingo8e5bdfd8": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -8,7 +8,7 @@
     }
   },
   "api": {
-    "chattyapi": {
+    "pingo": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -17,7 +17,21 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 31,
-              "description": "yes"
+              "description": "chatapp"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    },
+    "chattyapi": {
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 31,
+              "description": "demo"
             }
           },
           "additionalAuthenticationProviders": []
